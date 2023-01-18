@@ -37,7 +37,6 @@ export const makeSocket = ({
 		timeout: connectTimeoutMs,
 		agent
 	})
-	ws.setMaxListeners(0)
 	const ev = makeEventBuffer(logger)
 	/** ephemeral key pair used to encrypt/decrypt communication. Unique for each connection */
 	const ephemeralKeyPair = Curve.generateKeyPair()
