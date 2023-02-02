@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import EventEmitter from '@arugaz/eventemitter'
 import { Logger } from 'pino'
 import { proto } from '../../WAProto'
 import { BaileysEvent, BaileysEventEmitter, BaileysEventMap, BufferedEventData, Chat, ChatUpdate, Contact, WAMessage, WAMessageStatus } from '../Types'
