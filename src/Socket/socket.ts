@@ -64,7 +64,17 @@ export const makeSocket = ({
 		}
 
 		const bytes = noise.encodeFrame(data)
-        await sendPromise.call(ws, bytes) as Promise<void>
+		await promiseTimeout<void>(
+			connectTimeoutMs,
+			async(resolve, reject) => {
+				try {
+					await sendPromise.call(ws, bytes)
+					resolve()
+				} catch(error) {
+					reject(error)
+				}
+			}
+		)
 	}
 
 	/** send a binary node */
