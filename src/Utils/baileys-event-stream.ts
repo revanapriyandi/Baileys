@@ -1,4 +1,4 @@
-import EventEmitter from 'events'
+import EventEmitter from '@arugaz/eventemitter'
 import { createReadStream } from 'fs'
 import { writeFile } from 'fs/promises'
 import { createInterface } from 'readline'
